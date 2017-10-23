@@ -2,12 +2,77 @@
 <html>
     <head>
         <meta charset="UTF-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        <title>{% block title %}Bienvenue{% endblock %} | FlyAround</title>
         {% block stylesheets %}{% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+        <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
     </head>
     <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
+    {% block body %}
+        <nav class="navbar-fixed teal darken-2">
+        {% block navbar %}
+            <div class="nav-wrapper">
+                <a href="#!" class="brand-logo">Logo</a>
+                <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+                <ul class="right hide-on-med-and-down">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="{{ path('reservation_index') }}">Réservations</a></li>
+                    <li><a href="{{ path('flight_index') }}">Vols</a></li>
+                    <li><a href="{{ path('planemodel_index') }}">Avions</a></li>
+                    <li><a href="{{ path('terrain_index') }}">Aéroport</a></li>
+                </ul>
+                <ul class="side-nav" id="mobile-demo">
+                    <li><a href="{{ path('reservation_index') }}">Réservations</a></li>
+                    <li><a href="{{ path('flight_index') }}">Vols</a></li>
+                    <li><a href="{{ path('planemodel_index') }}">Avions</a></li>
+                    <li><a href="{{ path('terrain_index') }}">Aéroport</a></li>
+                </ul>
+            </div>
+        {% endblock %}
+        </nav>
+        <header>
+        {% block header %}{% endblock %}
+        </header>
+
+        <main class="container">
+        {% block content %}{% endblock %}
+        </main>
+
+        <footer>
+        {% block footer %}
+            <footer class="page-footer teal darken-3">
+                <div class="container">
+                    <div class="row">
+                        <div class="col l6 s12">
+                            <h5 class="white-text">Footer Content</h5>
+                            <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+                        </div>
+                        <div class="col l4 offset-l2 s12">
+                            <h5 class="white-text">Links</h5>
+                            <ul>
+                                <li><a class="grey-text text-lighten-3" href="{{ path('reservation_new') }}">Nouvelle réservation </a></li>
+                                <li><a class="grey-text text-lighten-3" href="{{ path('flight_new') }}">Nouveau vol </a></li>
+                                <li><a class="grey-text text-lighten-3" href="{{ path('planemodel_new') }}">Nouvel avion </a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-copyright">
+                    <div class="container">
+                        © 2017 Copyright Text
+                        <a class="grey-text text-lighten-4 right" href="https://github.com/Banb4n/FlyAround/tree/master">Banb4n</a>
+                    </div>
+                </div>
+            </footer>
+        {% endblock %}
+        </footer>
+    {% endblock %}
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <script src="{{ asset('assets/Js/main.js') }}"></script>
+    {% block javascripts %}{% endblock %}
     </body>
 </html>

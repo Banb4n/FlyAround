@@ -6,14 +6,14 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class FlightType extends AbstractType
+class TerrainType extends AbstractType
 {
     /**
      * {@inheritdoc}
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('arrival')->add('nbFreeSeats')->add('seatPrice')->add('takeOffTime')->add('publicationDate')->add('description')->add('pilot')->add('plane')->add('wasDone')->add('departure');
+        $builder->add('name')->add('icao')->add('latitude')->add('longitude')->add('address')->add('city')->add('zipcode')->add('country');
     }
     
     /**
@@ -22,7 +22,7 @@ class FlightType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'WCS\CoavBundle\Entity\Flight'
+            'data_class' => 'WCS\CoavBundle\Entity\Terrain'
         ));
     }
 
@@ -31,7 +31,7 @@ class FlightType extends AbstractType
      */
     public function getBlockPrefix()
     {
-        return 'wcs_coavbundle_flight';
+        return 'wcs_coavbundle_terrain';
     }
 
 
