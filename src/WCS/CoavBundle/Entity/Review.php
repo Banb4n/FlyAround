@@ -29,13 +29,13 @@ class Review
     private $text;
 
     /**
-     * @ORM\ManyToOne(targetEntity="WCS\CoavBundle\Entity\User", inversedBy="departures")
+     * @ORM\ManyToOne(targetEntity="WCS\CoavBundle\Entity\User")
      * @ORM\JoinColumn(nullable=false)
      */
     private $userRated;
 
     /**
-     * @ORM\ManyToOne(targetEntity="WCS\CoavBundle\Entity\User", inversedBy="departures")
+     * @ORM\ManyToOne(targetEntity="WCS\CoavBundle\Entity\User")
      * @ORM\JoinColumn(nullable=false)
      */
     private $reviewAuthor;
@@ -59,8 +59,6 @@ class Review
      * @ORM\JoinColumn(nullable=false)
      */
     private $users;
-
-
 
 
     /**

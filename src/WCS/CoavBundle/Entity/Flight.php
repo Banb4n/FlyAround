@@ -70,7 +70,7 @@ class Flight
     private $description;
 
     /**
-     * @ORM\ManyToOne(targetEntity="WCS\CoavBundle\Entity\User", inversedBy="departures")
+     * @ORM\ManyToOne(targetEntity="WCS\CoavBundle\Entity\User")
      * @ORM\JoinColumn(nullable=false)
      */
     private $pilot;
