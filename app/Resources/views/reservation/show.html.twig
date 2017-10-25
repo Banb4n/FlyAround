@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block body %}
+{% block content %}
     <h1>Reservation</h1>
 
     <table>
@@ -16,10 +16,6 @@
             <tr>
                 <th>Publicationdate</th>
                 <td>{% if reservation.publicationDate %}{{ reservation.publicationDate|date('Y-m-d H:i:s') }}{% endif %}</td>
-            </tr>
-            <tr>
-                <th>Passenger</th>
-                <td>{{ reservation.passenger }}</td>
             </tr>
             <tr>
                 <th>Flight</th>
