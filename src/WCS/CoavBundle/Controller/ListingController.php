@@ -31,12 +31,12 @@ class ListingController extends Controller
      * @ParamConverter("flight",   options={"mapping": {"flight_id": "id"}})
      * @ParamConverter("planemodel",   options={"mapping": {"planemodel_id": "id"}})
      */
-    public function indexAction(Reservation $reservation, Flight $flight, PlaneModel $planeModel)
+    public function indexAction(Reservation $reservation, Flight $flight, PlaneModel $planemodel)
     {
         return $this->render('listing/index.html.twig', [
             'reservation' => $reservation,
             'flight' => $flight,
-            'planemodel' => $planeModel
+            'planemodel' => $planemodel
         ]);
     }
 
