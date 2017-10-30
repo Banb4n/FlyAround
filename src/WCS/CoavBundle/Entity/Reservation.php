@@ -55,6 +55,13 @@ class Reservation
     private $wasDone;
 
     /**
+     * @return string
+     */
+    public function __toString()
+    {
+        return $this->id . " - " . $this->flight . " " . $this->wasDone;
+    }
+    /**
      * Constructor
      */
     public function __construct()
