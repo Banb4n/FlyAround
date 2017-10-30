@@ -89,6 +89,23 @@ class Flight
     private $wasDone;
 
 
+    /*  Personal Method  */
+
+    public function __toString()
+    {
+        return $this->id . " - " . $this->departure . " " . $this->seatPrice;
+    }
+
+    /*  Others methods  */
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->departures = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
     /**
      * Get id
      *

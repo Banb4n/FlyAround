@@ -22,7 +22,6 @@ class PlaneModel
     private $id;
 
     /**
-     * @var string
      *
      * @ORM\Column(name="model", type="string", length=128)
      */
@@ -55,6 +54,15 @@ class PlaneModel
      * @ORM\Column(name="isAvailable", type="boolean")
      */
     private $isAvailable;
+
+    /*  Personal Method  */
+
+    public function __toString()
+    {
+        return $this->id . " - " . $this->manufacturer . " " . $this->model;
+    }
+
+    /*  Others methods  */
 
 
     /**

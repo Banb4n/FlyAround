@@ -111,6 +111,15 @@ class User
     private $isActive;
 
 
+    /*  Personal Method  */
+
+    public function __toString()
+    {
+        return $this->id . " - " . $this->firstName . " " . $this->lastName . " - " . $this->isACertifiedPilot;
+    }
+
+    /*  Others methods  */
+
     /**
      * Get id
      *
@@ -407,13 +416,6 @@ class User
     public function getIsActive()
     {
         return $this->isActive;
-    }
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->reservations = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**
